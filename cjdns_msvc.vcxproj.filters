@@ -1,0 +1,1126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="admin\Admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin\AdminLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin\AuthorizedPasswords.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin\angel\Core.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin\angel\InterfaceWaiter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\Dict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\List.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\String.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\serialization\cloner\Cloner.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\serialization\json\JsonBencSerializer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\serialization\standard\BencMessageReader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benc\serialization\standard\BencMessageWriter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\AdminClient.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\cjdroute2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\Configurator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="contrib\c\makekeys.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="contrib\c\privatetopublic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="contrib\c\publictoip6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="contrib\c\sybilsim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\AddressCalc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\CryptoAuth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\Key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\Random.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\randombytes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\libuv\LibuvEntropyProvider.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\BsdKernArndSysctlRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\DevUrandomRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\GetEntropyRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\LinuxRandomUuidSysctlRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\ProcSysKernelRandomUuidRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\RandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\RtlGenRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\seed\SystemRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\test\DeterminentRandomSeed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\random\test\Random_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\test\CryptoAuth_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\test\CryptoAuth_unit_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\test\ReplayProtector_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\Address.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\DHTModuleRegistry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\EncodingSchemeModule.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\Pathfinder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\ReplyModule.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\SerializationModule.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\Janitor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\Janitor_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\Node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\NodeStore.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\NodeStore_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\ReplySerializer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\Router.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\RouterModule.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\RouterModule_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\RumorMill.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\SearchRunner.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\SearchRunner_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\SearchStore.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\VersionList.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\test\NodeStore_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\dhtcore\test\VersionList_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\test\DHTModules_handleIncoming_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dht\test\DHTModules_handleOutgoing_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exception\Except.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exception\WinFail.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\ASynchronizer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\ETHInterface_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\ETHInterface_darwin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\ETHInterface_linux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\FramingIface.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\UDPInterface_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\addressable\AddrIfaceAdapter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\addressable\PacketHeaderToUDPAddrIface.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\test\FramingIface_fuzz_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\test\FramingIface_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\BSDMessageTypeWrapper.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\NDPServer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TAPWrapper.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TUNInterface_darwin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TUNInterface_freebsd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TUNInterface_linux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TUNInterface_openbsd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TUNInterface_sunos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\TUNInterface_win32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\test\BSDMessageTypeWrapper_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\test\TAPWrapper_root_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\test\TUNInterface_ipv4_root_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\test\TUNInterface_ipv6_root_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\test\TUNTools.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\windows\TAPDevice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\windows\TAPInterface.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\windows\test\TAPDevice_root_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\tuntap\windows\test\TAPInterface_root_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ArrayReader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ArrayWriter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="io\FileReader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="io\FileWriter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="io\test\FileReader_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\Allocator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\Allocator_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\BufferAllocator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\MallocAllocator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\test\Allocator_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\Benchmark.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\ControlHandler.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\ConverterV15.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\EventEmitter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\InterfaceController.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\InterfaceController_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\NetCore.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\PeerLink.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\SessionManager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\SessionManager_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\SwitchAdapter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\SwitchPinger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\SwitchPinger_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\TUNAdapter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\UpperDistributor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\EncodingScheme.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\Penalty.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\SwitchCore.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\test\EncodingScheme_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\test\LabelSplicer_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\test\NumberCompress_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="switch\test\PenaltyFloat_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\Beacon_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\CryptoAddress_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\printIp_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\testcjdroute.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\TestFramework.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tunnel\IpTunnel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tunnel\IpTunnel_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tunnel\test\IpTunnel_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\AddrTools.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\ArchInfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\ArrayList.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Assert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\AverageRoller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Base10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Bits.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\CString.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Hex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Order.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Pinger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Seccomp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Seccomp_dummy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Security.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Security_admin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Security_win32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Setuid_linux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\SysInfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\Event.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\EventBase.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\Pipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\Process.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\Time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\Timeout.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\events\libuv\UDPAddrIface.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\log\FileWriterLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\log\IndirectLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\log\Log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\log\WriterLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\Sockaddr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\Socket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetDev.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetPlatform_darwin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetPlatform_freebsd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetPlatform_linux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetPlatform_openbsd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetPlatform_sunos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\netdev\NetPlatform_win32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\platform\test\Sockaddr_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\AddrTools_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\AverageRoller_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Base10_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Base32_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Bits_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Checksum_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Endian_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Hex_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Identity_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Map_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Process_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\Seccomp_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\test\UniqueName_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\version\Version.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="admin\Admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="admin\AdminLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="admin\AuthorizedPasswords.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="admin\angel\Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="admin\angel\InterfaceWaiter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\Dict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\Int.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\serialization\BencSerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\serialization\cloner\Cloner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\serialization\json\JsonBencSerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\serialization\standard\BencMessageReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benc\serialization\standard\BencMessageWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="client\AdminClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="client\Configurator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\AddressCalc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\CryptoAuth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\CryptoAuth_pvt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\Key.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ReplayProtector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\libuv\LibuvEntropyProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\BsdKernArndSysctlRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\DevUrandomRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\GetEntropyRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\LinuxRandomUuidSysctlRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\ProcSysKernelRandomUuidRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\RandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\RandomSeedProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\RtlGenRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\seed\SystemRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\random\test\DeterminentRandomSeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\Address.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\CJDHTConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\DHTMessage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\DHTModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\DHTModuleRegistry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\EncodingSchemeModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\Pathfinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\Pathfinder_pvt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\ReplyModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\SerializationModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\Janitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\Janitor_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\NodeList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\NodeStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\NodeStore_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\ReplySerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\Router.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\RouterModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\RouterModule_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\RouterModule_pvt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\Router_new.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\RumorMill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\RumorMill_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\SearchRunner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\SearchRunner_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\SearchStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht\dhtcore\VersionList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exception\Except.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exception\Jmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exception\WinFail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\ASynchronizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\ETHInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\ETHInterface_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\FramingIface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\Iface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\UDPInterface_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\addressable\AddrIface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\addressable\AddrIfaceAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\addressable\PacketHeaderToUDPAddrIface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\BSDMessageTypeWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\NDPServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\TAPWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\TUNInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\TUNMessageType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\test\TUNTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\windows\TAPDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\tuntap\windows\TAPInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ArrayReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ArrayWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io\FileReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io\FileWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Reader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Writer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\Allocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\Allocator_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\Allocator_pvt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\BufferAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\MallocAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\Benchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\ControlHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\ConverterV15.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\EventEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\InterfaceController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\InterfaceController_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\NetCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\PeerLink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\SessionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\SessionManager_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\SwitchAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\SwitchPinger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\SwitchPinger_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\TUNAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\UpperDistributor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch\EncodingScheme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch\LabelSplicer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch\NumberCompress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch\Penalty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch\PenaltyFloat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="switch\SwitchCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\RootTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\TestFramework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tunnel\IpTunnel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tunnel\IpTunnel_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\AddrTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\ArchInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\ArrayList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Average.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\AverageRoller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\AverageRoller_pvt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Base10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Base32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Bits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Checksum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Constant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\CString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Defined.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Endian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Gcc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Hex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Identity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Kbps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Linker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Order.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Pinger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Seccomp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Security.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Security_admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Setuid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\SysInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\UniqueName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\EventBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\Pipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\Process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\Timeout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\UDPAddrIface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\libuv\EventBase_pvt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\events\libuv\UvWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\log\FileWriterLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\log\IndirectLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\log\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\log\Log_impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\log\WriterLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\platform\Sockaddr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\platform\Socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\platform\unistd_msvc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\platform\netdev\NetDev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\platform\netdev\NetPlatform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\test\UniqueName_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\version\Version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\ContentType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\Control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\CryptoHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\DataHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\Ethernet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\Headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\Message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\NDPHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\PeerHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\PFChan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\RouteHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wire\SwitchHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="contrib\http\text\html\index.html" />
+    <None Include="contrib\nodejs\admin\www\config.html" />
+    <None Include="contrib\nodejs\admin\www\index.html" />
+    <None Include="contrib\nodejs\admin\www\logs.html" />
+    <None Include="contrib\nodejs\admin\www\map.html" />
+  </ItemGroup>
+</Project>

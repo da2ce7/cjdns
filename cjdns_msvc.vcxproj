@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EDDF5A5-F29A-4548-BCB8-8B48E8A98194}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)node_build\dependencies\cnacl\;$(SolutionDir)node_build\dependencies\libuv\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)node_build\dependencies\cnacl\;$(SolutionDir)node_build\dependencies\libuv\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)node_build\dependencies\cnacl\;$(SolutionDir)node_build\dependencies\libuv\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)node_build\dependencies\cnacl\;$(SolutionDir)node_build\dependencies\libuv\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="admin\Admin.c" />
+    <ClCompile Include="admin\AdminLog.c" />
+    <ClCompile Include="admin\angel\Core.c" />
+    <ClCompile Include="admin\angel\InterfaceWaiter.c" />
+    <ClCompile Include="admin\AuthorizedPasswords.c" />
+    <ClCompile Include="benc\Dict.c" />
+    <ClCompile Include="benc\List.c" />
+    <ClCompile Include="benc\serialization\cloner\Cloner.c" />
+    <ClCompile Include="benc\serialization\json\JsonBencSerializer.c" />
+    <ClCompile Include="benc\serialization\standard\BencMessageReader.c" />
+    <ClCompile Include="benc\serialization\standard\BencMessageWriter.c" />
+    <ClCompile Include="benc\String.c" />
+    <ClCompile Include="client\AdminClient.c" />
+    <ClCompile Include="client\cjdroute2.c" />
+    <ClCompile Include="client\Configurator.c" />
+    <ClCompile Include="contrib\c\makekeys.c" />
+    <ClCompile Include="contrib\c\privatetopublic.c" />
+    <ClCompile Include="contrib\c\publictoip6.c" />
+    <ClCompile Include="contrib\c\sybilsim.c" />
+    <ClCompile Include="crypto\AddressCalc.c" />
+    <ClCompile Include="crypto\CryptoAuth.c" />
+    <ClCompile Include="crypto\Key.c" />
+    <ClCompile Include="crypto\random\libuv\LibuvEntropyProvider.c" />
+    <ClCompile Include="crypto\random\Random.c" />
+    <ClCompile Include="crypto\random\randombytes.c" />
+    <ClCompile Include="crypto\random\seed\BsdKernArndSysctlRandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\DevUrandomRandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\GetEntropyRandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\LinuxRandomUuidSysctlRandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\ProcSysKernelRandomUuidRandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\RandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\RtlGenRandomSeed.c" />
+    <ClCompile Include="crypto\random\seed\SystemRandomSeed.c" />
+    <ClCompile Include="crypto\random\test\DeterminentRandomSeed.c" />
+    <ClCompile Include="crypto\random\test\Random_test.c" />
+    <ClCompile Include="crypto\test\CryptoAuth_test.c" />
+    <ClCompile Include="crypto\test\CryptoAuth_unit_test.c" />
+    <ClCompile Include="crypto\test\ReplayProtector_test.c" />
+    <ClCompile Include="dht\Address.c" />
+    <ClCompile Include="dht\dhtcore\Janitor.c" />
+    <ClCompile Include="dht\dhtcore\Janitor_admin.c" />
+    <ClCompile Include="dht\dhtcore\Node.c" />
+    <ClCompile Include="dht\dhtcore\NodeStore.c" />
+    <ClCompile Include="dht\dhtcore\NodeStore_admin.c" />
+    <ClCompile Include="dht\dhtcore\ReplySerializer.c" />
+    <ClCompile Include="dht\dhtcore\Router.c" />
+    <ClCompile Include="dht\dhtcore\RouterModule.c" />
+    <ClCompile Include="dht\dhtcore\RouterModule_admin.c" />
+    <ClCompile Include="dht\dhtcore\RumorMill.c" />
+    <ClCompile Include="dht\dhtcore\SearchRunner.c" />
+    <ClCompile Include="dht\dhtcore\SearchRunner_admin.c" />
+    <ClCompile Include="dht\dhtcore\SearchStore.c" />
+    <ClCompile Include="dht\dhtcore\test\NodeStore_test.c" />
+    <ClCompile Include="dht\dhtcore\test\VersionList_test.c" />
+    <ClCompile Include="dht\dhtcore\VersionList.c" />
+    <ClCompile Include="dht\DHTModuleRegistry.c" />
+    <ClCompile Include="dht\EncodingSchemeModule.c" />
+    <ClCompile Include="dht\Pathfinder.c" />
+    <ClCompile Include="dht\ReplyModule.c" />
+    <ClCompile Include="dht\SerializationModule.c" />
+    <ClCompile Include="dht\test\DHTModules_handleIncoming_test.c" />
+    <ClCompile Include="dht\test\DHTModules_handleOutgoing_test.c" />
+    <ClCompile Include="exception\Except.c" />
+    <ClCompile Include="exception\WinFail.c" />
+    <ClCompile Include="interface\addressable\AddrIfaceAdapter.c" />
+    <ClCompile Include="interface\addressable\PacketHeaderToUDPAddrIface.c" />
+    <ClCompile Include="interface\ASynchronizer.c" />
+    <ClCompile Include="interface\ETHInterface_admin.c" />
+    <ClCompile Include="interface\ETHInterface_darwin.c" />
+    <ClCompile Include="interface\ETHInterface_linux.c" />
+    <ClCompile Include="interface\FramingIface.c" />
+    <ClCompile Include="interface\test\FramingIface_fuzz_test.c" />
+    <ClCompile Include="interface\test\FramingIface_test.c" />
+    <ClCompile Include="interface\tuntap\BSDMessageTypeWrapper.c" />
+    <ClCompile Include="interface\tuntap\NDPServer.c" />
+    <ClCompile Include="interface\tuntap\TAPWrapper.c" />
+    <ClCompile Include="interface\tuntap\test\BSDMessageTypeWrapper_test.c" />
+    <ClCompile Include="interface\tuntap\test\TAPWrapper_root_test.c" />
+    <ClCompile Include="interface\tuntap\test\TUNInterface_ipv4_root_test.c" />
+    <ClCompile Include="interface\tuntap\test\TUNInterface_ipv6_root_test.c" />
+    <ClCompile Include="interface\tuntap\test\TUNTools.c" />
+    <ClCompile Include="interface\tuntap\TUNInterface_darwin.c" />
+    <ClCompile Include="interface\tuntap\TUNInterface_freebsd.c" />
+    <ClCompile Include="interface\tuntap\TUNInterface_linux.c" />
+    <ClCompile Include="interface\tuntap\TUNInterface_openbsd.c" />
+    <ClCompile Include="interface\tuntap\TUNInterface_sunos.c" />
+    <ClCompile Include="interface\tuntap\TUNInterface_win32.c" />
+    <ClCompile Include="interface\tuntap\windows\TAPDevice.c" />
+    <ClCompile Include="interface\tuntap\windows\TAPInterface.c" />
+    <ClCompile Include="interface\tuntap\windows\test\TAPDevice_root_test.c" />
+    <ClCompile Include="interface\tuntap\windows\test\TAPInterface_root_test.c" />
+    <ClCompile Include="interface\UDPInterface_admin.c" />
+    <ClCompile Include="io\ArrayReader.c" />
+    <ClCompile Include="io\ArrayWriter.c" />
+    <ClCompile Include="io\FileReader.c" />
+    <ClCompile Include="io\FileWriter.c" />
+    <ClCompile Include="io\test\FileReader_test.c" />
+    <ClCompile Include="memory\Allocator.c" />
+    <ClCompile Include="memory\Allocator_admin.c" />
+    <ClCompile Include="memory\BufferAllocator.c" />
+    <ClCompile Include="memory\MallocAllocator.c" />
+    <ClCompile Include="memory\test\Allocator_test.c" />
+    <ClCompile Include="net\Benchmark.c" />
+    <ClCompile Include="net\ControlHandler.c" />
+    <ClCompile Include="net\ConverterV15.c" />
+    <ClCompile Include="net\EventEmitter.c" />
+    <ClCompile Include="net\InterfaceController.c" />
+    <ClCompile Include="net\InterfaceController_admin.c" />
+    <ClCompile Include="net\NetCore.c" />
+    <ClCompile Include="net\PeerLink.c" />
+    <ClCompile Include="net\SessionManager.c" />
+    <ClCompile Include="net\SessionManager_admin.c" />
+    <ClCompile Include="net\SwitchAdapter.c" />
+    <ClCompile Include="net\SwitchPinger.c" />
+    <ClCompile Include="net\SwitchPinger_admin.c" />
+    <ClCompile Include="net\TUNAdapter.c" />
+    <ClCompile Include="net\UpperDistributor.c" />
+    <ClCompile Include="switch\EncodingScheme.c" />
+    <ClCompile Include="switch\Penalty.c" />
+    <ClCompile Include="switch\SwitchCore.c" />
+    <ClCompile Include="switch\test\EncodingScheme_test.c" />
+    <ClCompile Include="switch\test\LabelSplicer_test.c" />
+    <ClCompile Include="switch\test\NumberCompress_test.c" />
+    <ClCompile Include="switch\test\PenaltyFloat_test.c" />
+    <ClCompile Include="test\Beacon_test.c" />
+    <ClCompile Include="test\CryptoAddress_test.c" />
+    <ClCompile Include="test\printIp_test.c" />
+    <ClCompile Include="test\testcjdroute.c" />
+    <ClCompile Include="test\TestFramework.c" />
+    <ClCompile Include="tunnel\IpTunnel.c" />
+    <ClCompile Include="tunnel\IpTunnel_admin.c" />
+    <ClCompile Include="tunnel\test\IpTunnel_test.c" />
+    <ClCompile Include="util\AddrTools.c" />
+    <ClCompile Include="util\ArchInfo.c" />
+    <ClCompile Include="util\ArrayList.c" />
+    <ClCompile Include="util\Assert.c" />
+    <ClCompile Include="util\AverageRoller.c" />
+    <ClCompile Include="util\Base10.c" />
+    <ClCompile Include="util\Bits.c" />
+    <ClCompile Include="util\CString.c" />
+    <ClCompile Include="util\events\libuv\Event.c" />
+    <ClCompile Include="util\events\libuv\EventBase.c" />
+    <ClCompile Include="util\events\libuv\Pipe.c" />
+    <ClCompile Include="util\events\libuv\Process.c" />
+    <ClCompile Include="util\events\libuv\Time.c" />
+    <ClCompile Include="util\events\libuv\Timeout.c" />
+    <ClCompile Include="util\events\libuv\UDPAddrIface.c" />
+    <ClCompile Include="util\Hex.c" />
+    <ClCompile Include="util\log\FileWriterLog.c" />
+    <ClCompile Include="util\log\IndirectLog.c" />
+    <ClCompile Include="util\log\Log.c" />
+    <ClCompile Include="util\log\WriterLog.c" />
+    <ClCompile Include="util\Order.c" />
+    <ClCompile Include="util\Pinger.c" />
+    <ClCompile Include="util\platform\netdev\NetDev.c" />
+    <ClCompile Include="util\platform\netdev\NetPlatform_darwin.c" />
+    <ClCompile Include="util\platform\netdev\NetPlatform_freebsd.c" />
+    <ClCompile Include="util\platform\netdev\NetPlatform_linux.c" />
+    <ClCompile Include="util\platform\netdev\NetPlatform_openbsd.c" />
+    <ClCompile Include="util\platform\netdev\NetPlatform_sunos.c" />
+    <ClCompile Include="util\platform\netdev\NetPlatform_win32.c" />
+    <ClCompile Include="util\platform\Sockaddr.c" />
+    <ClCompile Include="util\platform\Socket.c" />
+    <ClCompile Include="util\platform\test\Sockaddr_test.c" />
+    <ClCompile Include="util\Seccomp.c" />
+    <ClCompile Include="util\Seccomp_dummy.c" />
+    <ClCompile Include="util\Security.c" />
+    <ClCompile Include="util\Security_admin.c" />
+    <ClCompile Include="util\Security_win32.c" />
+    <ClCompile Include="util\Setuid_linux.c" />
+    <ClCompile Include="util\SysInfo.c" />
+    <ClCompile Include="util\test\AddrTools_test.c" />
+    <ClCompile Include="util\test\AverageRoller_test.c" />
+    <ClCompile Include="util\test\Base10_test.c" />
+    <ClCompile Include="util\test\Base32_test.c" />
+    <ClCompile Include="util\test\Bits_test.c" />
+    <ClCompile Include="util\test\Checksum_test.c" />
+    <ClCompile Include="util\test\Endian_test.c" />
+    <ClCompile Include="util\test\Hex_test.c" />
+    <ClCompile Include="util\test\Identity_test.c" />
+    <ClCompile Include="util\test\Map_test.c" />
+    <ClCompile Include="util\test\Process_test.c" />
+    <ClCompile Include="util\test\Seccomp_test.c" />
+    <ClCompile Include="util\test\UniqueName_test.c" />
+    <ClCompile Include="util\version\Version.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="admin\Admin.h" />
+    <ClInclude Include="admin\AdminLog.h" />
+    <ClInclude Include="admin\angel\Core.h" />
+    <ClInclude Include="admin\angel\InterfaceWaiter.h" />
+    <ClInclude Include="admin\AuthorizedPasswords.h" />
+    <ClInclude Include="benc\Dict.h" />
+    <ClInclude Include="benc\Int.h" />
+    <ClInclude Include="benc\List.h" />
+    <ClInclude Include="benc\Object.h" />
+    <ClInclude Include="benc\serialization\BencSerializer.h" />
+    <ClInclude Include="benc\serialization\cloner\Cloner.h" />
+    <ClInclude Include="benc\serialization\json\JsonBencSerializer.h" />
+    <ClInclude Include="benc\serialization\standard\BencMessageReader.h" />
+    <ClInclude Include="benc\serialization\standard\BencMessageWriter.h" />
+    <ClInclude Include="benc\String.h" />
+    <ClInclude Include="client\AdminClient.h" />
+    <ClInclude Include="client\Configurator.h" />
+    <ClInclude Include="crypto\AddressCalc.h" />
+    <ClInclude Include="crypto\CryptoAuth.h" />
+    <ClInclude Include="crypto\CryptoAuth_pvt.h" />
+    <ClInclude Include="crypto\Key.h" />
+    <ClInclude Include="crypto\random\libuv\LibuvEntropyProvider.h" />
+    <ClInclude Include="crypto\random\Random.h" />
+    <ClInclude Include="crypto\random\seed\BsdKernArndSysctlRandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\DevUrandomRandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\GetEntropyRandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\LinuxRandomUuidSysctlRandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\ProcSysKernelRandomUuidRandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\RandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\RandomSeedProvider.h" />
+    <ClInclude Include="crypto\random\seed\RtlGenRandomSeed.h" />
+    <ClInclude Include="crypto\random\seed\SystemRandomSeed.h" />
+    <ClInclude Include="crypto\random\test\DeterminentRandomSeed.h" />
+    <ClInclude Include="crypto\ReplayProtector.h" />
+    <ClInclude Include="dht\Address.h" />
+    <ClInclude Include="dht\CJDHTConstants.h" />
+    <ClInclude Include="dht\dhtcore\Janitor.h" />
+    <ClInclude Include="dht\dhtcore\Janitor_admin.h" />
+    <ClInclude Include="dht\dhtcore\Node.h" />
+    <ClInclude Include="dht\dhtcore\NodeList.h" />
+    <ClInclude Include="dht\dhtcore\NodeStore.h" />
+    <ClInclude Include="dht\dhtcore\NodeStore_admin.h" />
+    <ClInclude Include="dht\dhtcore\ReplySerializer.h" />
+    <ClInclude Include="dht\dhtcore\Router.h" />
+    <ClInclude Include="dht\dhtcore\RouterModule.h" />
+    <ClInclude Include="dht\dhtcore\RouterModule_admin.h" />
+    <ClInclude Include="dht\dhtcore\RouterModule_pvt.h" />
+    <ClInclude Include="dht\dhtcore\Router_new.h" />
+    <ClInclude Include="dht\dhtcore\RumorMill.h" />
+    <ClInclude Include="dht\dhtcore\RumorMill_admin.h" />
+    <ClInclude Include="dht\dhtcore\SearchRunner.h" />
+    <ClInclude Include="dht\dhtcore\SearchRunner_admin.h" />
+    <ClInclude Include="dht\dhtcore\SearchStore.h" />
+    <ClInclude Include="dht\dhtcore\VersionList.h" />
+    <ClInclude Include="dht\DHTMessage.h" />
+    <ClInclude Include="dht\DHTModule.h" />
+    <ClInclude Include="dht\DHTModuleRegistry.h" />
+    <ClInclude Include="dht\EncodingSchemeModule.h" />
+    <ClInclude Include="dht\Pathfinder.h" />
+    <ClInclude Include="dht\Pathfinder_pvt.h" />
+    <ClInclude Include="dht\ReplyModule.h" />
+    <ClInclude Include="dht\SerializationModule.h" />
+    <ClInclude Include="exception\Except.h" />
+    <ClInclude Include="exception\Jmp.h" />
+    <ClInclude Include="exception\WinFail.h" />
+    <ClInclude Include="interface\addressable\AddrIface.h" />
+    <ClInclude Include="interface\addressable\AddrIfaceAdapter.h" />
+    <ClInclude Include="interface\addressable\PacketHeaderToUDPAddrIface.h" />
+    <ClInclude Include="interface\ASynchronizer.h" />
+    <ClInclude Include="interface\ETHInterface.h" />
+    <ClInclude Include="interface\ETHInterface_admin.h" />
+    <ClInclude Include="interface\FramingIface.h" />
+    <ClInclude Include="interface\Iface.h" />
+    <ClInclude Include="interface\tuntap\BSDMessageTypeWrapper.h" />
+    <ClInclude Include="interface\tuntap\NDPServer.h" />
+    <ClInclude Include="interface\tuntap\TAPWrapper.h" />
+    <ClInclude Include="interface\tuntap\test\TUNTools.h" />
+    <ClInclude Include="interface\tuntap\TUNInterface.h" />
+    <ClInclude Include="interface\tuntap\TUNMessageType.h" />
+    <ClInclude Include="interface\tuntap\windows\TAPDevice.h" />
+    <ClInclude Include="interface\tuntap\windows\TAPInterface.h" />
+    <ClInclude Include="interface\UDPInterface_admin.h" />
+    <ClInclude Include="io\ArrayReader.h" />
+    <ClInclude Include="io\ArrayWriter.h" />
+    <ClInclude Include="io\FileReader.h" />
+    <ClInclude Include="io\FileWriter.h" />
+    <ClInclude Include="io\Reader.h" />
+    <ClInclude Include="io\Writer.h" />
+    <ClInclude Include="memory\Allocator.h" />
+    <ClInclude Include="memory\Allocator_admin.h" />
+    <ClInclude Include="memory\Allocator_pvt.h" />
+    <ClInclude Include="memory\BufferAllocator.h" />
+    <ClInclude Include="memory\MallocAllocator.h" />
+    <ClInclude Include="net\Benchmark.h" />
+    <ClInclude Include="net\ControlHandler.h" />
+    <ClInclude Include="net\ConverterV15.h" />
+    <ClInclude Include="net\EventEmitter.h" />
+    <ClInclude Include="net\InterfaceController.h" />
+    <ClInclude Include="net\InterfaceController_admin.h" />
+    <ClInclude Include="net\NetCore.h" />
+    <ClInclude Include="net\PeerLink.h" />
+    <ClInclude Include="net\SessionManager.h" />
+    <ClInclude Include="net\SessionManager_admin.h" />
+    <ClInclude Include="net\SwitchAdapter.h" />
+    <ClInclude Include="net\SwitchPinger.h" />
+    <ClInclude Include="net\SwitchPinger_admin.h" />
+    <ClInclude Include="net\TUNAdapter.h" />
+    <ClInclude Include="net\UpperDistributor.h" />
+    <ClInclude Include="switch\EncodingScheme.h" />
+    <ClInclude Include="switch\LabelSplicer.h" />
+    <ClInclude Include="switch\NumberCompress.h" />
+    <ClInclude Include="switch\Penalty.h" />
+    <ClInclude Include="switch\PenaltyFloat.h" />
+    <ClInclude Include="switch\SwitchCore.h" />
+    <ClInclude Include="test\RootTest.h" />
+    <ClInclude Include="test\TestFramework.h" />
+    <ClInclude Include="tunnel\IpTunnel.h" />
+    <ClInclude Include="tunnel\IpTunnel_admin.h" />
+    <ClInclude Include="util\AddrTools.h" />
+    <ClInclude Include="util\ArchInfo.h" />
+    <ClInclude Include="util\ArrayList.h" />
+    <ClInclude Include="util\Assert.h" />
+    <ClInclude Include="util\Average.h" />
+    <ClInclude Include="util\AverageRoller.h" />
+    <ClInclude Include="util\AverageRoller_pvt.h" />
+    <ClInclude Include="util\Base10.h" />
+    <ClInclude Include="util\Base32.h" />
+    <ClInclude Include="util\Bits.h" />
+    <ClInclude Include="util\Checksum.h" />
+    <ClInclude Include="util\Constant.h" />
+    <ClInclude Include="util\CString.h" />
+    <ClInclude Include="util\Defined.h" />
+    <ClInclude Include="util\Endian.h" />
+    <ClInclude Include="util\events\Event.h" />
+    <ClInclude Include="util\events\EventBase.h" />
+    <ClInclude Include="util\events\libuv\EventBase_pvt.h" />
+    <ClInclude Include="util\events\libuv\UvWrapper.h" />
+    <ClInclude Include="util\events\Pipe.h" />
+    <ClInclude Include="util\events\Process.h" />
+    <ClInclude Include="util\events\Time.h" />
+    <ClInclude Include="util\events\Timeout.h" />
+    <ClInclude Include="util\events\UDPAddrIface.h" />
+    <ClInclude Include="util\Gcc.h" />
+    <ClInclude Include="util\Hex.h" />
+    <ClInclude Include="util\Identity.h" />
+    <ClInclude Include="util\Kbps.h" />
+    <ClInclude Include="util\Linker.h" />
+    <ClInclude Include="util\log\FileWriterLog.h" />
+    <ClInclude Include="util\log\IndirectLog.h" />
+    <ClInclude Include="util\log\Log.h" />
+    <ClInclude Include="util\log\Log_impl.h" />
+    <ClInclude Include="util\log\WriterLog.h" />
+    <ClInclude Include="util\Map.h" />
+    <ClInclude Include="util\Order.h" />
+    <ClInclude Include="util\Pinger.h" />
+    <ClInclude Include="util\platform\netdev\NetDev.h" />
+    <ClInclude Include="util\platform\netdev\NetPlatform.h" />
+    <ClInclude Include="util\platform\Sockaddr.h" />
+    <ClInclude Include="util\platform\Socket.h" />
+    <ClInclude Include="util\platform\unistd_msvc.h" />
+    <ClInclude Include="util\Seccomp.h" />
+    <ClInclude Include="util\Security.h" />
+    <ClInclude Include="util\Security_admin.h" />
+    <ClInclude Include="util\Setuid.h" />
+    <ClInclude Include="util\SysInfo.h" />
+    <ClInclude Include="util\test\UniqueName_test.h" />
+    <ClInclude Include="util\UniqueName.h" />
+    <ClInclude Include="util\version\Version.h" />
+    <ClInclude Include="wire\ContentType.h" />
+    <ClInclude Include="wire\Control.h" />
+    <ClInclude Include="wire\CryptoHeader.h" />
+    <ClInclude Include="wire\DataHeader.h" />
+    <ClInclude Include="wire\Error.h" />
+    <ClInclude Include="wire\Ethernet.h" />
+    <ClInclude Include="wire\Headers.h" />
+    <ClInclude Include="wire\Message.h" />
+    <ClInclude Include="wire\NDPHeader.h" />
+    <ClInclude Include="wire\PeerHeader.h" />
+    <ClInclude Include="wire\PFChan.h" />
+    <ClInclude Include="wire\RouteHeader.h" />
+    <ClInclude Include="wire\SwitchHeader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="contrib\http\text\html\index.html" />
+    <None Include="contrib\nodejs\admin\www\config.html" />
+    <None Include="contrib\nodejs\admin\www\index.html" />
+    <None Include="contrib\nodejs\admin\www\logs.html" />
+    <None Include="contrib\nodejs\admin\www\map.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
