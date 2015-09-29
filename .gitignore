@@ -16,6 +16,8 @@
 /node_build/node_modules/.bin
 /randombytes*
 /testcjdroute*
+/bin
+/obj
 *.pyc
 .clang_complete
 *~
@@ -23,3 +25,7 @@
 /node_modules/jshint
 /node_modules/.bin
 /contrib/docker/cjdns*/
+/.vs
+*.sdf
+*.opensdf
+.ntvs_analysis.dat
