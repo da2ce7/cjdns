@@ -7,7 +7,15 @@ var TestRunner = require('./TestRunner');
 var RandomBytes = require('./RandomBytes');
 var Common = require('./Common');
 
+var SYSTEM = process.env['SYSTEM'] || process.platform;
 var AR = process.env['AR'] || 'ar';
+
+if (SYSTEM === 'win32') {
+    var ENV = process.env;
+    if (ENV.hasOwnProperty('VisualStudioVersion')) {
+        AR = 'lib';
+    }
+}
 
 var ar = function(args, onComplete) {
     var exe = Spawn(AR, args);

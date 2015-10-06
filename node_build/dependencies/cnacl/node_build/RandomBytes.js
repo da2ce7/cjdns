@@ -1,9 +1,9 @@
-var Fs = require('fs');
-var Common = require('./Common');
+var Fs = require("fs");
+var Common = require("./Common");
 
 module.exports.run = function(cc, config, onComplete) {
 
-    var randomBytesImp = 'devurandom';
+    var randomBytesImp = (config.gcc !== "cl") ? "devurandom" : "CryptGenRandom";
 
     var args = [];
     args.push(config.flag.compileOnly, config.flag.outputObj + Common.OBJECTS_INTERNAL + '/randombytes' + config.ext.obj);
@@ -13,7 +13,7 @@ module.exports.run = function(cc, config, onComplete) {
         if (err) {
             throw err;
         }
-        Fs.writeFile(Common.INCLUDE_INTERNAL + '/randombytes.h', content, function(err) {
+        Fs.writeFile(Common.INCLUDE_INTERNAL + "/randombytes.h", content, function(err) {
             if (err) {
                 throw err;
             }
@@ -25,7 +25,7 @@ module.exports.run = function(cc, config, onComplete) {
                     console.log(stderr);
                 }
                 if (retCode) {
-                    throw new Error('failed to compile');
+                    throw new Error("failed to compile");
                 }
                 onComplete();
             });

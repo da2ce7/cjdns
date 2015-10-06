@@ -4,12 +4,13 @@ var Fs = require("fs");
 module.exports.check = function(builder, func, ldflags, callback) {
 
     var file = builder.tmpFile();
-    var objectFile = builder.tmpFile();
-    var outputFile = builder.tmpFile();
+    var codeFile = file + '.c';
+    var objFile = file + builder.config.ext.obj;
+    var exeFile = file + builder.config.ext.exe;
 
     nThen(function(waitFor) {
 
-        Fs.writeFile(file, "int main() { " + func + "(); }", waitFor(function(err, ret) {
+        Fs.writeFile(codeFile, "int main() { " + func + "(); }", waitFor(function(err, ret) {
             if (err) {
                 waitFor.abort();
                 callback(err);
@@ -19,9 +20,14 @@ module.exports.check = function(builder, func, ldflags, callback) {
     }).nThen(function(waitFor) {
 
         var flags = [];
-
-        flags.push(builder.config.flag.languageC, builder.config.flag.outputExe + outputFile, file);
         flags.push.apply(flags, ldflags);
+
+        // create a random object file (msvc only)
+        if (builder.config.gcc === 'cl') {
+            flags.push(builder.config.flag.outputObj + objFile)
+        }
+
+        flags.push(builder.config.flag.outputExe + exeFile, codeFile);
 
         builder.cc(flags, waitFor(function(ret, out, err) {
             if (ret && /undefined reference/.test(err)) {

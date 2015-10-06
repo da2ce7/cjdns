@@ -93,6 +93,13 @@ var compiler = function(gcc, args, callback, content) {
         });
 
         exe.on('close', returnAfter(function(ret) {
+            // cl always outputs to 'out' even if error
+            // except when also outputing to err.
+            if (err === '') {
+                if (gcc === 'cl' && ret !== 0) {
+                    err = [out, out = err][0]; //swap
+                }
+            }
             callback(ret, out, err);
         }));
 
@@ -125,6 +132,7 @@ var cc = function(gcc, args, callback, content) {
         if (ret !== 0) {
             err = "Error: " + gcc + " " + args + "\n\n" + err;
         } else {
+            //debug("Debug: " + err);
             ret = null;
         }
 
@@ -428,11 +436,31 @@ var compileFile = function(fileName, builder, tempDir, callback) {
 
             cc(state.gcc, flags, waitFor(function(ret, output, err) {
                 throwIfErr(err);
-                // replace the escapes and newlines
-                output = output.replace(/ \\|\n/g, '').split(' ');
 
-                // first 2 entries are crap
-                output.splice(0, 2);
+                if (state.gcc === 'cl') {
+                    output = err;
+                    output = output.replace(/\r?\n/g, "\r\n").split("\r\n");
+
+                    output_tmp = [];
+                    output.forEach(function(entry) {
+
+                        if (entry.indexOf(".\\") !== -1) {
+                            output_tmp.push(entry.split(".\\")[1])
+                        }
+
+                    });
+
+                    output = output_tmp;
+
+
+                } else {
+
+                    // replace the escapes and newlines
+                    output = output.replace(/ \\|\n/g, '').split(' ');
+
+                    // first 2 entries are crap
+                    output.splice(0, 2);
+                }
 
                 for (var i = output.length - 1; i >= 0; i--) {
                     //console.log('Removing empty dependency [' +

@@ -15,8 +15,13 @@ var getCompiler = function(cc, config) {
 
         var args = [];
         args.push.apply(args, compileCall.args);
-        args.push(config.flag.outputExe + compileCall.outFile, compileCall.inFile);
-        args.push(BUILD_DIR + '/' + 'libnacl' + config.ext.lib);
+
+        if (config.gcc === 'cl') {
+            args.push(config.flag.outputObj + compileCall.outFile + config.ext.obj);
+        }
+
+        args.push(config.flag.outputExe + compileCall.outFile + config.ext.exe, compileCall.inFile);
+        args.push(BUILD_DIR + '/' + 'libnacl' + config.ext.lib, config.msvcLibs);
 
         cflags = process.env['CFLAGS'];
         if (cflags) {
