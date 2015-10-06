@@ -1,3 +1,4 @@
+var Os = require('os');
 var Fs = require('fs');
 var JobQueue = require('./JobQueue');
 
@@ -213,9 +214,11 @@ var getCompiler = function(cc) {
     };
 };
 
-var WORKERS = 4;
+var cpus = Os.cpus(); // workaround, nodejs seems to be broken on openbsd (undefined result after second call)
+var PROCESSORS = Math.floor((typeof cpus === 'undefined' ? 1 : cpus.length) * 1.25);
+
 var compileFiles = function(compileQueue, cc, onComplete) {
-    JobQueue.run(compileQueue, getCompiler(cc), WORKERS, onComplete);
+    JobQueue.run(compileQueue, getCompiler(cc), PROCESSORS, onComplete);
 };
 
 var buildCompileQueue = function(impls, onComplete) {
