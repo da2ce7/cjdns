@@ -5,6 +5,7 @@ module.exports.check = function(builder, func, ldflags, callback) {
 
     var file = builder.tmpFile();
     var codeFile = file + '.c';
+    var objFile = file + builder.config.ext.obj;
     var exeFile = file + builder.config.ext.exe;
 
     nThen(function(waitFor) {
@@ -20,6 +21,11 @@ module.exports.check = function(builder, func, ldflags, callback) {
 
         var flags = [];
         flags.push.apply(flags, ldflags);
+
+        // create a random object file (msvc only)
+        if (builder.config.gcc === 'cl') {
+            flags.push(builder.config.flag.outputObj + objFile)
+        }
 
         flags.push(builder.config.flag.outputExe + exeFile, codeFile);
 

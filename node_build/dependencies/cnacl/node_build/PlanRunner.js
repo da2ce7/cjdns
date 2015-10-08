@@ -270,8 +270,12 @@ var archive = function(ar, arName, config, onComplete) {
         var libFilename = 'libnacl' + config.ext.lib;
 
         var args = [];
-        // NOTE: if ar is provided with the 's' argument, it will provide the same roll as ar + ranlib.
-        args.push('scr', BUILD_DIR + '/' + libFilename);
+        if (arName !== 'lib') {
+            // NOTE: if ar is provided with the 's' argument, it will provide the same roll as ar + ranlib.
+            args.push('scr', BUILD_DIR + '/' + libFilename);
+        } else {
+            args.push('/nologo', '/OUT:' + BUILD_DIR + '/' + libFilename);
+        }
 
         console.log('\033[1;31mLinking static C library ' + libFilename + '\033[0m');
         files.forEach(function(file) {
