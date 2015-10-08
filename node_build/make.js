@@ -50,14 +50,13 @@ Builder.configure({
     gcc: GCC,
     tempDir: TMP,
     devNull: '/dev/null',
-    logLevel: process.env['Log_LEVEL'] || 'DEBUG',
+    logLevel: process.env['Log_LEVEL'] || 'DEBUG'
 }, function(builder, waitFor) {
 
     builder.config.ext = {};
     builder.config.ext.exe = '';
     builder.config.ext.obj = '.o';
     builder.config.ext.lib = '.a';
-
 
     builder.config.flag = {};
     builder.config.flag.precompileOnly = '-E';
@@ -75,7 +74,6 @@ Builder.configure({
     builder.config.flag.retainSymbolInfo = '-g';
     builder.config.flag.lto = '-flto';
     builder.config.flag.pic = '-fPIC';
-
 
     // c version
     builder.config.cflags.push(
@@ -106,7 +104,6 @@ Builder.configure({
         builder.config.flag.define + 'NumberCompress_TYPE=v3x5x8',
 
         // enable for safety (don't worry about speed, profiling shows they add ~nothing)
-        builder.config.flag.define + 'Identity_CHECK=1',
         builder.config.flag.define + 'Allocator_USE_CANARIES=1',
         builder.config.flag.define + 'PARANOIA=1'
     );
@@ -115,6 +112,11 @@ Builder.configure({
         builder.config.cflags.push('-fprofile-arcs', '-ftest-coverage');
         builder.config.ldflags.push('-fprofile-arcs', '-ftest-coverage');
     }
+
+    // additional checks (strong use of GCC extensions)
+    builder.config.cflags.push(
+        builder.config.flag.define + 'Identity_CHECK=1'
+    );
 
     var android = /android/i.test(builder.config.gcc);
 
@@ -413,7 +415,8 @@ Builder.configure({
                   args.push('--no-parallel');
                 }
 
-                var exe = Spawn(python, args, {
+                var exe = null;
+                exe = Spawn(python, args, {
                     env: env,
                     stdio: 'inherit'
                 });
@@ -442,7 +445,8 @@ Builder.configure({
 
                 var makeCommand = ['freebsd', 'openbsd'].indexOf(builder.config.systemName) >= 0 ? 'gmake' : 'make';
 
-                var exe = Spawn(makeCommand, args, {
+                var exe = null;
+                exe = Spawn(makeCommand, args, {
                     stdio: 'inherit'
                 });
 

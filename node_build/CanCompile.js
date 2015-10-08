@@ -17,8 +17,9 @@ var Fs = require("fs");
 
 module.exports.check = function(builder, code, cflags, callback) {
 
-    var codeFile = builder.tmpFile() + '.c';
-    var exeFile = builder.tmpFile() + builder.config.ext.exe;
+    var file = builder.tmpFile();
+    var codeFile = file + '.c';
+    var exeFile = file + builder.config.ext.exe;
 
     nThen(function(waitFor) {
 
@@ -33,6 +34,7 @@ module.exports.check = function(builder, code, cflags, callback) {
 
         var flags = [];
         flags.push.apply(flags, cflags);
+
         flags.push(builder.config.flag.outputExe + exeFile, codeFile);
 
         builder.cc(flags, waitFor(function(ret, out, err) {
