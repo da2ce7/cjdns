@@ -32,12 +32,37 @@ var LDFLAGS = process.env['LDFLAGS'];
 
 var NO_MARCH_FLAG = ['ppc', 'ppc64'];
 
+// only used if compiling with msvc
+var MSVC_LIBS = ["kernel32.lib", "user32.lib", "gdi32.lib", "winspool.lib", "comdlg32.lib", "advapi32.lib", "shell32.lib", "ole32.lib", "oleaut32.lib", "uuid.lib", "odbc32.lib", "odbccp32.lib"];
+var GYP_MSVS_VERSION = null
+
+if (SYSTEM === 'win32') {
+    var ENV = process.env;
+    if (ENV.hasOwnProperty('VisualStudioVersion')) {
+
+        GCC = 'cl';
+
+        var msvc_ver = ENV.VisualStudioVersion;
+        if (msvc_ver === '14.0') {
+            GYP_MSVS_VERSION = 2015
+        } else if (msvc_ver === '12.0') {
+            GYP_MSVS_VERSION = 2013
+        } else if (msvc_ver === '11.0') {
+            GYP_MSVS_VERSION = 2012
+        } else if (msvc_ver === '10.0') {
+            GYP_MSVS_VERSION = 2012
+        } else {
+            throw new Error('Unknown MSVC Version: ' + msvc_ver);
+        }
+    }
+}
+
 if (GCC) {
-    // Already specified.
+  // Already specified.
 } else if (SYSTEM === 'openbsd') {
-    GCC = 'egcc';
+  GCC = 'egcc';
 } else {
-    GCC = 'gcc';
+  GCC = 'gcc';
 }
 
 if (!TMP) {
@@ -49,46 +74,113 @@ Builder.configure({
     crossCompiling: process.env['CROSS'] !== undefined,
     gcc: GCC,
     tempDir: TMP,
-    devNull: '/dev/null',
-    logLevel: process.env['Log_LEVEL'] || 'DEBUG'
+    devNull: (GCC !== 'cl') ? '/dev/null' : 'NUL',
+    logLevel: process.env['Log_LEVEL'] || 'DEBUG',
+    gypMsvcVer: GYP_MSVS_VERSION
 }, function(builder, waitFor) {
 
     builder.config.ext = {};
-    builder.config.ext.exe = '';
-    builder.config.ext.obj = '.o';
-    builder.config.ext.lib = '.a';
+
+    if (GCC !== 'cl') {
+
+        builder.config.ext.exe = '';
+        builder.config.ext.obj = '.o';
+        builder.config.ext.lib = '.a';
+
+    } else {
+
+        builder.config.ext.exe = '.exe';
+        builder.config.ext.obj = '.obj';
+        builder.config.ext.lib = '.lib';
+    }
 
     builder.config.flag = {};
-    builder.config.flag.precompileOnly = '-E';
-    builder.config.flag.showIncludes = '-MM';
-    builder.config.flag.define = '-D';
-    builder.config.flag.outputObj = '-o';
-    builder.config.flag.outputExe = '-o';
-    builder.config.flag.outputPreprocessed = '-o';
-    builder.config.flag.compileOnly = '-c';
-    builder.config.flag.include = '-I';
-    builder.config.flag.optimizeLevel = '-O3';
-    builder.config.flag.compileAsC = [];
-    builder.config.flag.languageC = '-xc';
-    builder.config.flag.languageCppOutput = '-xcpp-output';
-    builder.config.flag.retainSymbolInfo = '-g';
-    builder.config.flag.lto = '-flto';
-    builder.config.flag.pic = '-fPIC';
 
-    // c version
-    builder.config.cflags.push(
-        '-std=c99'
-    );
+    if (GCC !== 'cl') {
+        builder.config.flag.precompileOnly = '-E';
+        builder.config.flag.showIncludes = '-MM';
+        builder.config.flag.define = '-D';
+        builder.config.flag.outputObj = '-o';
+        builder.config.flag.outputExe = '-o';
+        builder.config.flag.outputPreprocessed = '-o';
+        builder.config.flag.compileOnly = '-c';
+        builder.config.flag.include = '-I';
+        builder.config.flag.optimizeLevel = '-O3';
+        builder.config.flag.compileAsC = [];
+        builder.config.flag.languageC = '-xc';
+        builder.config.flag.languageCppOutput = '-xcpp-output';
+        builder.config.flag.retainSymbolInfo = '-g';
+        builder.config.flag.lto = '-flto';
+        builder.config.flag.pic = '-fPIC';
 
-    // warnings
-    builder.config.cflags.push(
-        '-pedantic',
-        '-Wall',
-        '-Wextra',
-        '-Werror',
-        '-Wno-pointer-sign',
-        '-Wno-unused-parameter'
-    );
+    } else {
+        builder.config.flag.precompileOnly = '/E';
+        builder.config.flag.showIncludes = '/showIncludes';
+        builder.config.flag.define = '/D';
+        builder.config.flag.outputObj = '/Fo';
+        builder.config.flag.outputExe = '/Fe';
+        builder.config.flag.outputPreprocessed = '/Fi';
+        builder.config.flag.compileOnly = '/c';
+        builder.config.flag.include = '/I';
+        builder.config.flag.optimizeLevel = '/Ox';
+        builder.config.flag.compileAsC = '/Tc';
+        builder.config.flag.languageC = '/TC';
+        builder.config.flag.languageCppOutput = [];
+        builder.config.flag.retainSymbolInfo = '/Zi';
+        builder.config.flag.lto = '/GL';
+        builder.config.flag.pic = [];
+    }
+
+    builder.config.msvcLibs = (GCC === 'cl') ? MSVC_LIBS : [];
+
+    // msvc only
+    if (GCC === 'cl') {
+        builder.config.cflags.push(
+            '/nologo',
+            '/MD',
+            '/bigobj',
+            '/Gd',
+            '/EHsc',
+            '/Zc:inline',
+            '/fp:precise',
+            '/Zc:forScope',
+            '/Zc:wchar_t',
+            '/Zc:auto'
+        );
+    }
+
+    if (GCC !== 'cl') {
+        // c version
+        builder.config.cflags.push(
+            '-std=c99'
+        );
+    }
+
+    if (GCC !== 'cl') {
+        // warnings
+        builder.config.cflags.push(
+            '-pedantic',
+            '-Wall',
+            '-Wextra',
+            '-Werror',
+            '-Wno-pointer-sign',
+            '-Wno-unused-parameter'
+        );
+    }
+
+    // msvc only defines
+    if (GCC === 'cl') {
+        builder.config.cflags.push(
+            //           builder.config.flag.define + '_WCHAR_T_DEFINED',
+            builder.config.flag.define + 'VC_EXTRALEAN',
+            builder.config.flag.define + 'WIN32_LEAN_AND_MEAN',
+            builder.config.flag.define + "WIN32",
+            builder.config.flag.define + "NDEBUG",
+            builder.config.flag.define + "_WINDOWS",
+            builder.config.flag.define + "_UNICODE",
+            builder.config.flag.define + "UNICODE"
+        );
+    }
 
     // defines
     builder.config.cflags.push(
@@ -114,9 +206,12 @@ Builder.configure({
     }
 
     // additional checks (strong use of GCC extensions)
-    builder.config.cflags.push(
-        builder.config.flag.define + 'Identity_CHECK=1'
-    );
+    // not 'cl' for the moment.
+    if (GCC !== 'cl') {
+        builder.config.cflags.push(
+            builder.config.flag.define + 'Identity_CHECK=1'
+        );
+    }
 
     var android = /android/i.test(builder.config.gcc);
 
@@ -126,12 +221,16 @@ Builder.configure({
 
     if (!builder.config.crossCompiling) {
         if (NO_MARCH_FLAG.indexOf(process.arch) < -1) {
-            builder.config.cflags.push('-march=native');
+            if (GCC !== 'cl') {
+                builder.config.cflags.push('-march=native');
+            }
         }
     }
 
     if (builder.config.systemName === 'win32') {
-        builder.config.cflags.push('-Wno-format');
+        if (GCC !== 'cl') {
+            builder.config.cflags.push('-Wno-format');
+        }
     } else if (builder.config.systemName === 'linux') {
         builder.config.ldflags.push('-Wl,-z,relro,-z,now,-z,noexecstack');
         builder.config.cflags.push('-DHAS_ETH_INTERFACE=1');
@@ -265,7 +364,11 @@ Builder.configure({
     var dependencyDir = builder.config.buildDir + '/dependencies';
     var libuvLib = dependencyDir + '/libuv/out/Release/libuv' + builder.config.ext.lib;
     if (builder.config.systemName === 'win32') {
-        libuvLib = dependencyDir + '/libuv/out/Release/obj.target/libuv' + builder.config.ext.lib;
+        if (builder.config.gcc !== 'cl') {
+            libuvLib = dependencyDir + '/libuv/out/Release/obj.target/libuv' + builder.config.ext.lib;
+        } else {
+            libuvLib = dependencyDir + '/libuv/Release/lib/libuv' + builder.config.ext.lib;
+        }
     }
 
     // Build dependencies
@@ -302,7 +405,11 @@ Builder.configure({
                         args.unshift(builder.config.flag.pic);
                     }
 
-                    args.unshift('-fomit-frame-pointer');
+                    if (builder.config.gcc !== 'cl') {
+                        args.unshift('-fomit-frame-pointer');
+                    } else {
+                        args.unshift('/nologo', '/MD', '/bigobj');
+                    }
 
                     args.unshift(builder.config.flag.optimizeLevel);
 
@@ -332,11 +439,16 @@ Builder.configure({
         }
 
         if (builder.config.systemName === 'win32') {
-            builder.config.libs.push(
-                '-lws2_32',
-                '-lpsapi', // GetProcessMemoryInfo()
-                '-liphlpapi' // GetAdapterAddresses()
-            );
+            if (builder.config.gcc !== 'cl') {
+                builder.config.libs.push(
+                    '-lws2_32',
+                    '-lpsapi', // GetProcessMemoryInfo()
+                    '-liphlpapi' // GetAdapterAddresses()
+                );
+            } else {
+                builder.config.libs.push(MSVC_LIBS);
+                builder.config.libs.push('ws2_32.lib');
+            }
         } else if (builder.config.systemName === 'linux' && !android) {
             builder.config.libs.push('-lrt'); // clock_gettime()
         } else if (builder.config.systemName === 'darwin') {
@@ -391,7 +503,11 @@ Builder.configure({
                 var args = ['./gyp_uv.py'];
                 var env = process.env;
 
-                env.CC = builder.config.gcc;
+                if (builder.config.gcc !== 'cl') {
+                    env.CC = builder.config.gcc;
+                } else {
+                    env.GYP_MSVS_VERSION = builder.config.gypMsvcVer;
+                }
 
                 if (env.TARGET_ARCH) {
                     args.push('-Dtarget_arch=' + env.TARGET_ARCH);
@@ -416,10 +532,17 @@ Builder.configure({
                 }
 
                 var exe = null;
-                exe = Spawn(python, args, {
-                    env: env,
-                    stdio: 'inherit'
-                });
+
+                if (builder.config.gcc !== 'cl') {
+                    exe = Spawn(python, args, {
+                        env: env,
+                        stdio: 'inherit'
+                    });
+                } else {
+                    exe = Spawn(python, ['gyp_uv.py'], {
+                        stdio: 'inherit'
+                    });
+                }
 
                 exe.on('error', function() {
                     console.error("couldn't launch gyp [" + python + "]");
@@ -446,9 +569,15 @@ Builder.configure({
                 var makeCommand = ['freebsd', 'openbsd'].indexOf(builder.config.systemName) >= 0 ? 'gmake' : 'make';
 
                 var exe = null;
-                exe = Spawn(makeCommand, args, {
-                    stdio: 'inherit'
-                });
+                if (builder.config.gcc !== 'cl') {
+                    exe = Spawn(makeCommand, args, {
+                        stdio: 'inherit'
+                    });
+                } else {
+                    exe = Spawn("msbuild", ["uv.sln", '/p:Configuration=Release', '/clp:NoSummary;NoItemAndPropertyList;Verbosity=minimal', '/nologo'], {
+                        stdio: 'inherit'
+                    });
+                }
 
                 exe.on('error', function(err) {
                     if (err.code === 'ENOENT') {

@@ -3,7 +3,7 @@ var Common = require('./Common');
 
 module.exports.run = function(cc, config, onComplete) {
 
-    var randomBytesImp = 'devurandom';
+    var randomBytesImp = (config.gcc !== 'cl') ? 'devurandom' : 'CryptGenRandom';
 
     var args = [];
     args.push(config.flag.compileOnly, config.flag.outputObj + Common.OBJECTS_INTERNAL + '/randombytes' + config.ext.obj);
